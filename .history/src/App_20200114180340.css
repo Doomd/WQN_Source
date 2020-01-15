@@ -13,16 +13,15 @@
 	flex-direction: column;
 	/* align-items: center;
 	justify-content: center; */
-	font-size: calc(10px + 1vmin);
+	font-size: calc(10px + 2vmin);
 	color: white;
 }
 .nav {
-	height: 12vh;
+	height: 10vh;
 	background-color: white;
-	padding: 1vh;
 }
 .logo {
-	width: 50%;
+	width: 50vw;
 }
 img.logo {
 	width: auto;
@@ -30,7 +29,7 @@ img.logo {
 }
 .links {
 	text-align: right;
-	width: 50%;
+	width: 50vw;
 	color: #111111;
 }
 .main {
@@ -41,7 +40,6 @@ img.logo {
 .footer {
 	height: 10vh;
 	background-color: #282c34;
-	padding: 1vh;
 }
 
 .App-logo {
@@ -88,7 +86,6 @@ body {
 	overflow-x: hidden;
 	height: 100%;
 	width: 100%;
-	font-size: 14px;
 }
 
 h1 {

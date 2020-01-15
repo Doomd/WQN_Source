@@ -17,9 +17,9 @@
 	color: white;
 }
 .nav {
-	height: 12vh;
+	height: 10vh;
 	background-color: white;
-	padding: 1vh;
+	padding: 10px;
 }
 .logo {
 	width: 50%;
@@ -41,7 +41,6 @@ img.logo {
 .footer {
 	height: 10vh;
 	background-color: #282c34;
-	padding: 1vh;
 }
 
 .App-logo {

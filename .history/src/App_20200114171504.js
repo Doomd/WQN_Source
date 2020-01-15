@@ -1,6 +1,5 @@
 import React from 'react';
 //import logo from './logo.svg';
-import logo from './we-quote-nevada-logo.svg';
 import 'bootstrap/scss/bootstrap.scss';
 import { Container, Row, Col } from 'reactstrap'
 import './App.css';
@@ -23,7 +22,7 @@ function App() {
 				<header className="header">
 					<div className="nav">
 						<div className="logo">
-							<img src={logo} className="logo"></img>
+
 						</div>
 						<div className="links">Home | Contact</div>
 					</div>

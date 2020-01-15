@@ -1,6 +1,5 @@
 import React from 'react';
 //import logo from './logo.svg';
-import logo from './we-quote-nevada-logo.svg';
 import 'bootstrap/scss/bootstrap.scss';
 import { Container, Row, Col } from 'reactstrap'
 import './App.css';
@@ -19,16 +18,11 @@ createStore({
 function App() {
 	return (
 		<div className="App">
-			<div className="wrapper">
-				<header className="header">
-					<div className="nav">
-						<div className="logo">
-							<img src={logo} className="logo"></img>
-						</div>
-						<div className="links">Home | Contact</div>
-					</div>
+			<div className="App-wrapper">
+				<header className="App-header">
+
 				</header>
-				<main className="main">
+				<main className="App-main">
 					<div className="py-5 bcform">
 						<Container>
 							<Row className="d-flex justify-content-center">
@@ -47,7 +41,7 @@ function App() {
 				</main>
 				<div className="push">&nbsp;</div>
 			</div>
-			<footer className="footer">
+			<footer className="App-footer">
 				<div>
 
 				</div>

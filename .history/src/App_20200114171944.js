@@ -23,7 +23,7 @@ function App() {
 				<header className="header">
 					<div className="nav">
 						<div className="logo">
-							<img src={logo} className="logo"></img>
+
 						</div>
 						<div className="links">Home | Contact</div>
 					</div>
