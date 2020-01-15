@@ -3,7 +3,7 @@ import React from 'react';
 import logo from './we-quote-nevada-logo.svg';
 import 'bootstrap/scss/bootstrap.scss';
 import { Container, Row, Col } from 'reactstrap'
-import './App.css';
+import './App.scss';
 
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { StateMachineProvider, createStore } from "little-state-machine";
@@ -23,7 +23,7 @@ function App() {
 				<header className="header">
 					<div className="nav">
 						<div className="logo">
-							<img src={logo}></img>
+							<img src={logo} className="logo"></img>
 						</div>
 						<div className="links">Home | Contact</div>
 					</div>

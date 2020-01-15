@@ -4,7 +4,7 @@ import logo from './we-quote-nevada-logo.svg';
 import 'bootstrap/scss/bootstrap.scss';
 import { Container, Row, Col } from 'reactstrap'
 import "./App.scss";
-import Footer from "./footer";
+import "./footer";
 
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { StateMachineProvider, createStore } from "little-state-machine";
