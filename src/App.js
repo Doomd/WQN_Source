@@ -1,6 +1,6 @@
 import React from 'react';
 //import logo from './logo.svg';
-import logo from './we-quote-nevada-logo.svg';
+import logo from './we-quote-nevada-logo-pink.svg';
 import 'bootstrap/scss/bootstrap.scss';
 import { Container, Row, Col } from 'reactstrap'
 import "./App.scss";
@@ -23,8 +23,9 @@ function App() {
             <div className="wrapper">
                 <header className="header">
                     <div className="nav">
-                        <div className="logo">
-                            <img src={logo} className="logo"></img>
+                        <div className="branding">
+                            <div className="logo"><img src={logo}></img></div>
+                            <div className="site-title"><h1>We Quote Nevada</h1></div>
                         </div>
                         <div className="links">Home | Contact</div>
                     </div>
@@ -49,9 +50,7 @@ function App() {
                 <div className="push">&nbsp;</div>
             </div>
             <footer className="footer">
-                <div>
-                    <Footer />
-                </div>
+                <Footer />
             </footer>
         </div>
     );

@@ -36,7 +36,7 @@ export default () => (
             <Col>
                 <h5>Address</h5>
                 <ul>
-                    <span>2561 Wigwam Parkway<br />Henderson, NV 89074</span>
+                    <a href="https://www.google.com/maps/place/2561+Wigwam+Pkwy,+Henderson,+NV+89074">2561 Wigwam Parkway<br />Henderson, NV 89074</a>
                 </ul>
             </Col>
             <Col>
