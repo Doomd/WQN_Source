@@ -3,9 +3,9 @@
 /* Custom Below */
 $gradient: linear-gradient(210deg, #943cff 0%, #dd45d3 40.13%, #fc9a57 90%);
 
-/* @import "/node_modules/bootstrap/scss/bootstrap.scss"; */
-/* @import "/node_modules/slick-carousel/slick/slick.css";
-@import "/node_modules/slick-carousel/slick/slick-theme.css"; */
+// @import "/node_modules/bootstrap/scss/bootstrap.scss";
+@import url("https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css");
 
 @font-face {
 	font-family: "HKGrotesk";
@@ -33,24 +33,31 @@ p {
 	font-family: "Roboto", sans-serif;
 }
 // .App {
-
+a {
+	color: #943cff;
+}
+a:hover {
+	color: #fc9a57;
+	text-decoration: none;
+}
 // }
 .wrapper {
 	min-height: 100vh;
 	margin-bottom: -10vh;
 }
 .header {
-	background-color: #282c34;
-	height: 20vh;
+	//background-color: #282c34;
+	// height: 20vh;
 	display: flex;
 	flex-direction: column;
 	/* align-items: center;
 	justify-content: center; */
-	font-size: calc(10px + 1vmin);
+	// font-size: calc(10px + 1vmin);
 	color: white;
+	font-size: min($numbers: 18px);
 }
 .nav {
-	height: 6vh;
+	min-height: 6vh;
 	background-color: white;
 	padding: 1vh;
 	justify-content: space-between;
@@ -58,38 +65,54 @@ p {
 .branding {
 	display: flex;
 	flex-wrap: wrap;
-	flex-direction: row;
-	justify-content: start;
-	align-items: auto;
 	align-content: center;
+	min-width: 280px;
 }
-// .logo {
 
-// }
+.logo {
+	margin-right: 10px;
+}
 // .site-title {
 
 // }
 .logo img {
 	height: 4vh;
+	min-height: 24px;
+}
+.site-title {
+	display: flex;
+	align-items: center;
 }
 .site-title h1 {
-	margin: 0 0 0 10px;
 	padding: 0;
-	color: #333333;
+	margin: 0;
+	color: #555555;
 	font-size: 3vh;
+	// background: $gradient;
+	// background-clip: text;
+	// -webkit-background-clip: text;
+	// -webkit-text-fill-color: transparent;
+}
+.site-title h1:hover {
 	background: $gradient;
 	background-clip: text;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
+	text-decoration: none;
+}
+.form-header {
+	text-align: center;
 }
 .links {
-	color: #111111;
+	color: #555555;
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: row-reversed;
 	justify-content: start;
 	align-items: auto;
 	align-content: center;
+	font-size: 2vh;
+	font-size: min($numbers: 18px);
 }
 // .main {
 
@@ -161,14 +184,18 @@ div.py-5.container > div.row > div.col {
 	padding-right: 15px;
 }
 main div.py-5.how-it-works {
-	padding-bottom: 0px !important;
+	padding: 2rem 0 1rem 0 !important;
+}
+main div.py-5.bcform {
+	padding-top: 0 !important;
 }
 footer h5 {
 	margin-bottom: 0;
+	min-width: 180px;
 }
 footer ul {
 	padding: 0;
-	min-width: 200px;
+	word-break: break-all;
 }
 footer ul > li {
 	font-size: 0.8rem;

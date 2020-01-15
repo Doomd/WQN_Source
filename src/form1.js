@@ -43,25 +43,9 @@ const Step1 = props => {
 
         <div id="form-page-1" className="form-page-1">
             <form onSubmit={handleSubmit(onSubmit)}>
+                <div className="form-header"><h2>Get A Personalized Quote Today!</h2></div>
                 <h3 hidden>Form Page 1</h3>
-                <div className="form-group">
-                    <div className="row">
-                        <div className="col">
-                            <label htmlFor="email">Email</label>
-                            <input
-                                id="email" name="email" type="email" placeholder="your@emailaddress.com" className="form-control input-md"
-                                ref={register({
-                                    required: true,
-                                    pattern: /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
-                                })}
-                                defaultValue={state.data.email}
-                            //onChange={e => setTheEmail(e.target.value)}
 
-                            />
-                            {errors.email && <div className="form_error">Please Enter a Valid Email address</div>}
-                        </div>
-                    </div>
-                </div>
 
                 <div className="form-group">
                     <div className="row">
@@ -174,6 +158,20 @@ const Step1 = props => {
                             {errors.phone && <div className="form_error">Please Enter a valid US phone number</div>}
                         </div>
                         <div className="col">
+
+                            <label htmlFor="email">Email</label>
+                            <input
+                                id="email" name="email" type="email" placeholder="your@emailaddress.com" className="form-control input-md"
+                                ref={register({
+                                    required: true,
+                                    pattern: /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
+                                })}
+                                defaultValue={state.data.email}
+                            //onChange={e => setTheEmail(e.target.value)}
+
+                            />
+                            {errors.email && <div className="form_error">Please Enter a Valid Email address</div>}
+
                             <label htmlFor="contactMethod">How would you like to be contacted?</label>
                             <div className="radio-group">
                                 <div className="form-check form-check-inline">
