@@ -12,12 +12,13 @@ function formatDate(userDate) {
     // prepend '0' to single number dar or month
     if (dateArr[0].length == 1) {
         dateArr[0] = '0' + dateArr[0];
-    } else if (dateArr[1].length == 1) {
+    }
+    if (dateArr[1].length == 1) {
         dateArr[1] = '0' + dateArr[1];
     }
     // concatenate new values into one string
     userDate = dateArr[0] + "/" + dateArr[1] + "/" + dateArr[2];
-    alert("userDate is " + userDate)
+    //alert("userDate is " + userDate)
 
     // test new string value
     //console.log(userDate);
