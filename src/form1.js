@@ -53,7 +53,7 @@ const Step1 = props => {
                         <div className="col-md-4">
                             <label htmlFor="firstName">First Name</label>
                             <input
-                                id="firstName" name="firstName" type="text" placeholder="Alex"
+                                id="firstName" name="firstName" type="text" placeholder="First"
                                 className="form-control input-md" ref={register({ required: true })}
                                 defaultValue={state.data.firstName}
                             />
@@ -63,7 +63,7 @@ const Step1 = props => {
                         <div className="col-md-4">
                             <label htmlFor="lastName">Last Name</label>
                             <input
-                                id="lastName" name="lastName" type="text" placeholder="Smith" className="form-control input-md"
+                                id="lastName" name="lastName" type="text" placeholder="Last" className="form-control input-md"
                                 ref={register({ required: true })}
                                 defaultValue={state.data.lastName}
                             />
@@ -118,66 +118,15 @@ const Step1 = props => {
                             <label htmlFor="state" style={{ display: 'block' }}>State</label>
                             <select id="state" name="state" className="custom-select"
                                 ref={register({ required: true, minLength: 1 })}
-                                defaultValue={state.data.state || ""}
+                                defaultValue={state.data.state || "NV"}
                             >
-                                <option value="">Please Select</option>
-                                <option value="AL">Alabama</option>
-                                <option value="AK">Alaska</option>
-                                <option value="AZ">Arizona</option>
-                                <option value="AR">Arkansas</option>
-                                <option value="CA">California</option>
-                                <option value="CO">Colorado</option>
-                                <option value="CT">Connecticut</option>
-                                <option value="DE">Delaware</option>
-                                <option value="DC">District Of Columbia</option>
-                                <option value="FL">Florida</option>
-                                <option value="GA">Georgia</option>
-                                <option value="HI">Hawaii</option>
-                                <option value="ID">Idaho</option>
-                                <option value="IL">Illinois</option>
-                                <option value="IN">Indiana</option>
-                                <option value="IA">Iowa</option>
-                                <option value="KS">Kansas</option>
-                                <option value="KY">Kentucky</option>
-                                <option value="LA">Louisiana</option>
-                                <option value="ME">Maine</option>
-                                <option value="MD">Maryland</option>
-                                <option value="MA">Massachusetts</option>
-                                <option value="MI">Michigan</option>
-                                <option value="MN">Minnesota</option>
-                                <option value="MS">Mississippi</option>
-                                <option value="MO">Missouri</option>
-                                <option value="MT">Montana</option>
-                                <option value="NE">Nebraska</option>
-                                <option value="NV" selected>Nevada</option>
-                                <option value="NH">New Hampshire</option>
-                                <option value="NJ">New Jersey</option>
-                                <option value="NM">New Mexico</option>
-                                <option value="NY">New York</option>
-                                <option value="NC">North Carolina</option>
-                                <option value="ND">North Dakota</option>
-                                <option value="OH">Ohio</option>
-                                <option value="OK">Oklahoma</option>
-                                <option value="OR">Oregon</option>
-                                <option value="PA">Pennsylvania</option>
-                                <option value="RI">Rhode Island</option>
-                                <option value="SC">South Carolina</option>
-                                <option value="SD">South Dakota</option>
-                                <option value="TN">Tennessee</option>
-                                <option value="TX">Texas</option>
-                                <option value="UT">Utah</option>
-                                <option value="VT">Vermont</option>
-                                <option value="VA">Virginia</option>
-                                <option value="WA">Washington</option>
-                                <option value="WV">West Virginia</option>
-                                <option value="WI">Wisconsin</option>
-                                <option value="WY">Wyoming</option>
+                                <option value="NV">Nevada</option>
                             </select>
                             {errors.state && <div className="form_error">Please choose a state</div>}
                         </div>
 
                         <div className="col-md-4">
-                            <label htmlFor="zip" style={{ display: 'block' }}>Zip Code:</label>
+                            <label htmlFor="zip" style={{ display: 'block' }}>Zip Code</label>
                             <input id="zip" name="zip" type="text" placeholder="Zip Code" className="form-control input-md"
                                 ref={register({ required: true, minLength: 5, maxLength: 5 })}
                                 defaultValue={state.data.zip}
@@ -212,14 +161,14 @@ const Step1 = props => {
                         <div className="col">
                             <label className="control-label" htmlFor="interest" >How can we help you?</label>
                             <div className="radio-group">
-                                <div className="form-check form-check-inline">
+                                <div className="form-check form-check-inline interest">
                                     <input className="form-check-input interest" type="radio" name="interest" id="interest-0" value="1"
                                         ref={register({ required: true })}
                                         defaultChecked={state.data.interest === "1"}
                                     />
                                     <label className="form-check-label" htmlFor="interest-0">I want to save money on insurance.</label>
                                 </div>
-                                <div className="form-check form-check-inline">
+                                <div className="form-check form-check-inline interest">
                                     <input className="form-check-input interest" type="radio" name="interest" id="interest-1" value="2"
                                         ref={register({ required: true })}
                                         defaultChecked={state.data.interest === "2"}
@@ -227,14 +176,14 @@ const Step1 = props => {
                                     <label className="form-check-label interest" htmlFor="interest-1">I want better insurance.</label>
                                 </div>
 
-                                <div className="form-check form-check-inline">
+                                <div className="form-check form-check-inline interest">
                                     <input className="form-check-input interest" type="radio" name="interest" id="interest-2" value="3"
                                         ref={register({ required: true })}
                                         defaultChecked={state.data.interest === "3"}
                                     />
                                     <label className="form-check-label" htmlFor="interest-2">I'm want personalized service.</label>
                                 </div>
-                                <div className="form-check form-check-inline">
+                                <div className="form-check form-check-inline interest">
                                     <input className="form-check-input" type="radio" name="interest" id="interest-3" value="4"
                                         ref={register({ required: true })}
                                         defaultChecked={state.data.interest === "4"}

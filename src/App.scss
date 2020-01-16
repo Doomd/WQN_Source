@@ -252,6 +252,9 @@ select {
 label {
 	margin: 0 0 0.25rem 0;
 }
+div.interest label {
+	min-width: 220px;
+}
 input,
 select,
 .radio-group {
