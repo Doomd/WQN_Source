@@ -7,8 +7,9 @@ const Result = props => {
 
     return (
         <div className="result">
-            <h2>Your Info Was Submitted Successfully!</h2>
+            <div className="form-header"><h2>Your Info Was Submitted Successfully!</h2></div>
             <h3>We'll get in touch with you very soon!</h3>
+
             <div hidden>
                 <pre >{JSON.stringify(state, null, 2)}</pre>
                 <h2>Result:</h2>
