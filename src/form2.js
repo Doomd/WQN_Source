@@ -4,6 +4,29 @@ import { withRouter } from 'react-router-dom';
 import { useStateMachine } from "little-state-machine";
 import updateAction from "./updateAction";
 
+function formatDate(userDate) {
+    // split date string at '/' 
+    var dateArr = userDate.split('/');
+
+    // check for single number dar or month
+    // prepend '0' to single number dar or month
+    if (dateArr[0].length == 1) {
+        dateArr[0] = '0' + dateArr[0];
+    }
+    if (dateArr[1].length == 1) {
+        dateArr[1] = '0' + dateArr[1];
+    }
+    // concatenate new values into one string
+    userDate = dateArr[0] + "/" + dateArr[1] + "/" + dateArr[2];
+    //alert("userDate is " + userDate)
+
+    // test new string value
+    //console.log(userDate);
+
+    // return value
+    return userDate;
+}
+
 const Step1 = props => {
     const scriptURL = 'https://script.google.com/macros/s/AKfycbwbrIjWVJfPDC4AZGHmopV3sDXDRvrZ7BniEVP2shUn0EjJDFV9/exec' //Production URL
     //const scriptURL = "https://script.google.com/macros/s/AKfycbzpbG1CcPH5y7BGW6cJ5r2VivimxL7EQl96RBx8Cp6qRj1MW7zm/exec" //Test URL https://docs.google.com/spreadsheets/d/1CoQ2ZOVJLT9U9OkgdEvxuX3vNg-wZwLjbOEYr0Ivfhc/edit#gid=0
@@ -723,8 +746,23 @@ const Step1 = props => {
 
                             <div className="col-md-3">
                                 <label htmlFor="driverDOB1" hidden>Additonal Driver #1 Date of Birth:</label>
-                                <input id="driverDOB1" name="driverDOB1" type="date" placeholder="DOB: MM/DD/YYYY" className="form-control input-md"
-                                    ref={register({ required: true })}
+                                <input id="driverDOB1" name="driverDOB1" type="text" placeholder="DOB: MM/DD/YYYY" className="form-control input-md"
+                                    ref={register({
+                                        required: true,
+                                        pattern: /(?:(?:(0?[1-9]|1[0-2])[-.\s\/]?(0?[1-9]|1\d|2[0-8])|(0?[13-9]|1[0-2])[-.\s\/](29|30)|(0?[13578]|1[02])[-.\s\/]?(31))[-.\s\/]?([1-2]\d{3})|(0?2)[-.\s\/]?(29)(?:[-.\s\/]?([1-2]\d(?:0[48]|[2468][048]|[13579][26])|(?:[2468][048]|[13579][26])00)))/
+                                    })}
+                                    onBlur={e => {
+                                        const value = e.target.value;
+                                        const dobRegex = /(?:(?:(0?[1-9]|1[0-2])[-.\s\/]?(0?[1-9]|1\d|2[0-8])|(0?[13-9]|1[0-2])[-.\s\/](29|30)|(0?[13578]|1[02])[-.\s\/]?(31))[-.\s\/]?([1-2]\d{3})|(0?2)[-.\s\/]?(29)(?:[-.\s\/]?([1-2]\d(?:0[48]|[2468][048]|[13579][26])|(?:[2468][048]|[13579][26])00)))/;
+                                        if (dobRegex.test(value)) {
+                                            var normalizedDOB = value.replace(dobRegex, "$1$3$5$8/$2$4$6$9/$7$10");
+                                            //alert("The formatted Phone Number is: " + normalizedNum);
+                                            e.target.value = formatDate(normalizedDOB);
+
+                                        } else {
+                                            //alert("DOB isn't valid! (" + normalizedDOB + ")");
+                                        }
+                                    }}
                                     defaultValue={state.data.driverDOB1}
                                 />
                                 {errors.driverDOB1 && <div className="form_error">Please enter valid DOB (mm/dd/yyyy)</div>}
@@ -766,8 +804,23 @@ const Step1 = props => {
 
                             <div className="col-md-3">
                                 <label htmlFor="driverDOB2" hidden>Additonal Driver #2 Date of Birth:</label>
-                                <input id="driverDOB2" name="driverDOB2" type="date" placeholder="DOB: MM/DD/YYYY" className="form-control input-md"
-                                    ref={register({ required: true })}
+                                <input id="driverDOB2" name="driverDOB2" type="text" placeholder="DOB: MM/DD/YYYY" className="form-control input-md"
+                                    ref={register({
+                                        required: true,
+                                        pattern: /(?:(?:(0?[1-9]|1[0-2])[-.\s\/]?(0?[1-9]|1\d|2[0-8])|(0?[13-9]|1[0-2])[-.\s\/](29|30)|(0?[13578]|1[02])[-.\s\/]?(31))[-.\s\/]?([1-2]\d{3})|(0?2)[-.\s\/]?(29)(?:[-.\s\/]?([1-2]\d(?:0[48]|[2468][048]|[13579][26])|(?:[2468][048]|[13579][26])00)))/
+                                    })}
+                                    onBlur={e => {
+                                        const value = e.target.value;
+                                        const dobRegex = /(?:(?:(0?[1-9]|1[0-2])[-.\s\/]?(0?[1-9]|1\d|2[0-8])|(0?[13-9]|1[0-2])[-.\s\/](29|30)|(0?[13578]|1[02])[-.\s\/]?(31))[-.\s\/]?([1-2]\d{3})|(0?2)[-.\s\/]?(29)(?:[-.\s\/]?([1-2]\d(?:0[48]|[2468][048]|[13579][26])|(?:[2468][048]|[13579][26])00)))/;
+                                        if (dobRegex.test(value)) {
+                                            var normalizedDOB = value.replace(dobRegex, "$1$3$5$8/$2$4$6$9/$7$10");
+                                            //alert("The formatted Phone Number is: " + normalizedNum);
+                                            e.target.value = formatDate(normalizedDOB);
+
+                                        } else {
+                                            //alert("DOB isn't valid! (" + normalizedDOB + ")");
+                                        }
+                                    }}
                                     defaultValue={state.data.driverDOB2}
                                 />
                                 {errors.driverDOB2 && <div className="form_error">Please enter valid DOB (mm/dd/yyyy)</div>}
@@ -809,8 +862,23 @@ const Step1 = props => {
 
                             <div className="col-md-3">
                                 <label htmlFor="driverDOB3" hidden>Additonal Driver #3 Date of Birth:</label>
-                                <input id="driverDOB3" name="driverDOB3" type="date" placeholder="DOB: MM/DD/YYYY" className="form-control input-md"
-                                    ref={register({ required: true })}
+                                <input id="driverDOB3" name="driverDOB3" type="text" placeholder="DOB: MM/DD/YYYY" className="form-control input-md"
+                                    ref={register({
+                                        required: true,
+                                        pattern: /(?:(?:(0?[1-9]|1[0-2])[-.\s\/]?(0?[1-9]|1\d|2[0-8])|(0?[13-9]|1[0-2])[-.\s\/](29|30)|(0?[13578]|1[02])[-.\s\/]?(31))[-.\s\/]?([1-2]\d{3})|(0?2)[-.\s\/]?(29)(?:[-.\s\/]?([1-2]\d(?:0[48]|[2468][048]|[13579][26])|(?:[2468][048]|[13579][26])00)))/
+                                    })}
+                                    onBlur={e => {
+                                        const value = e.target.value;
+                                        const dobRegex = /(?:(?:(0?[1-9]|1[0-2])[-.\s\/]?(0?[1-9]|1\d|2[0-8])|(0?[13-9]|1[0-2])[-.\s\/](29|30)|(0?[13578]|1[02])[-.\s\/]?(31))[-.\s\/]?([1-2]\d{3})|(0?2)[-.\s\/]?(29)(?:[-.\s\/]?([1-2]\d(?:0[48]|[2468][048]|[13579][26])|(?:[2468][048]|[13579][26])00)))/;
+                                        if (dobRegex.test(value)) {
+                                            var normalizedDOB = value.replace(dobRegex, "$1$3$5$8/$2$4$6$9/$7$10");
+                                            //alert("The formatted Phone Number is: " + normalizedNum);
+                                            e.target.value = formatDate(normalizedDOB);
+
+                                        } else {
+                                            //alert("DOB isn't valid! (" + normalizedDOB + ")");
+                                        }
+                                    }}
                                     defaultValue={state.data.driverDOB3}
                                 />
                                 {errors.driverDOB3 && <div className="form_error">Please enter valid DOB (mm/dd/yyyy)</div>}
@@ -852,8 +920,23 @@ const Step1 = props => {
 
                             <div className="col-md-3">
                                 <label htmlFor="driverDOB4" hidden>Additonal Driver #4 Date of Birth:</label>
-                                <input id="driverDOB4" name="driverDOB4" type="date" placeholder="DOB: MM/DD/YYYY" className="form-control input-md"
-                                    ref={register({ required: true })}
+                                <input id="driverDOB4" name="driverDOB4" type="text" placeholder="DOB: MM/DD/YYYY" className="form-control input-md"
+                                    ref={register({
+                                        required: true,
+                                        pattern: /(?:(?:(0?[1-9]|1[0-2])[-.\s\/]?(0?[1-9]|1\d|2[0-8])|(0?[13-9]|1[0-2])[-.\s\/](29|30)|(0?[13578]|1[02])[-.\s\/]?(31))[-.\s\/]?([1-2]\d{3})|(0?2)[-.\s\/]?(29)(?:[-.\s\/]?([1-2]\d(?:0[48]|[2468][048]|[13579][26])|(?:[2468][048]|[13579][26])00)))/
+                                    })}
+                                    onBlur={e => {
+                                        const value = e.target.value;
+                                        const dobRegex = /(?:(?:(0?[1-9]|1[0-2])[-.\s\/]?(0?[1-9]|1\d|2[0-8])|(0?[13-9]|1[0-2])[-.\s\/](29|30)|(0?[13578]|1[02])[-.\s\/]?(31))[-.\s\/]?([1-2]\d{3})|(0?2)[-.\s\/]?(29)(?:[-.\s\/]?([1-2]\d(?:0[48]|[2468][048]|[13579][26])|(?:[2468][048]|[13579][26])00)))/;
+                                        if (dobRegex.test(value)) {
+                                            var normalizedDOB = value.replace(dobRegex, "$1$3$5$8/$2$4$6$9/$7$10");
+                                            //alert("The formatted Phone Number is: " + normalizedNum);
+                                            e.target.value = formatDate(normalizedDOB);
+
+                                        } else {
+                                            //alert("DOB isn't valid! (" + normalizedDOB + ")");
+                                        }
+                                    }}
                                     defaultValue={state.data.driverDOB4}
                                 />
                                 {errors.driverDOB4 && <div className="form_error">Please enter valid DOB (mm/dd/yyyy)</div>}
@@ -895,8 +978,23 @@ const Step1 = props => {
 
                             <div className="col-md-3">
                                 <label htmlFor="driverDOB5" hidden>Additonal Driver #5 Date of Birth:</label>
-                                <input id="driverDOB5" name="driverDOB5" type="date" placeholder="DOB: MM/DD/YYYY" className="form-control input-md"
-                                    ref={register({ required: true })}
+                                <input id="driverDOB5" name="driverDOB5" type="text" placeholder="DOB: MM/DD/YYYY" className="form-control input-md"
+                                    ref={register({
+                                        required: true,
+                                        pattern: /(?:(?:(0?[1-9]|1[0-2])[-.\s\/]?(0?[1-9]|1\d|2[0-8])|(0?[13-9]|1[0-2])[-.\s\/](29|30)|(0?[13578]|1[02])[-.\s\/]?(31))[-.\s\/]?([1-2]\d{3})|(0?2)[-.\s\/]?(29)(?:[-.\s\/]?([1-2]\d(?:0[48]|[2468][048]|[13579][26])|(?:[2468][048]|[13579][26])00)))/
+                                    })}
+                                    onBlur={e => {
+                                        const value = e.target.value;
+                                        const dobRegex = /(?:(?:(0?[1-9]|1[0-2])[-.\s\/]?(0?[1-9]|1\d|2[0-8])|(0?[13-9]|1[0-2])[-.\s\/](29|30)|(0?[13578]|1[02])[-.\s\/]?(31))[-.\s\/]?([1-2]\d{3})|(0?2)[-.\s\/]?(29)(?:[-.\s\/]?([1-2]\d(?:0[48]|[2468][048]|[13579][26])|(?:[2468][048]|[13579][26])00)))/;
+                                        if (dobRegex.test(value)) {
+                                            var normalizedDOB = value.replace(dobRegex, "$1$3$5$8/$2$4$6$9/$7$10");
+                                            //alert("The formatted Phone Number is: " + normalizedNum);
+                                            e.target.value = formatDate(normalizedDOB);
+
+                                        } else {
+                                            //alert("DOB isn't valid! (" + normalizedDOB + ")");
+                                        }
+                                    }}
                                     defaultValue={state.data.driverDOB5}
                                 />
                                 {errors.driverDOB5 && <div className="form_error">Please enter valid DOB (mm/dd/yyyy)</div>}
