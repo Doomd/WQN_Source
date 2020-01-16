@@ -9,7 +9,7 @@ import Footer from "./footer";
 import Box from "./box";
 import { FaFingerprint, FaCommentDollar, FaCheckDouble } from 'react-icons/fa';
 
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, HashRouter, Link } from "react-router-dom";
 import { StateMachineProvider, createStore } from "little-state-machine";
 import Step1 from "./form1";
 import Step2 from "./form2";
@@ -47,7 +47,7 @@ function App() {
                                 <div className="site-title"><h1>We Quote Nevada</h1></div>
                             </div>
                         </a>
-                        <div className="links">call: (702) 344-2400</div>
+                        <div className="links">call: <a href="tel:720-344-2400">(702) 344-2400</a></div>
                     </div>
                     <div className="slider">
 
@@ -68,11 +68,11 @@ function App() {
                             <Row className="d-flex justify-content-center">
                                 <Col md={12}>
                                     <StateMachineProvider>
-                                        <Router>
+                                        <HashRouter basename="/">
                                             <Route exact path="/" component={Step1} />
                                             <Route path="/form2" component={Step2} />
                                             <Route path="/result" component={Result} />
-                                        </Router>
+                                        </HashRouter>
                                     </StateMachineProvider>
                                 </Col>
                             </Row>
