@@ -1,0 +1,45 @@
+{
+	"short_name": "We Quote Nevada",
+	"name": "Get a Personalized Insurance Quote",
+	"icons": [
+		{
+			"src": "favicon.ico",
+			"sizes": "64x64 32x32 24x24 16x16",
+			"type": "image/x-icon"
+		},
+		{
+			"src": "/favicon/we-quote-nevada-logo-square-196.png",
+			"type": "image/png",
+			"sizes": "196x196"
+		},
+		{
+			"src": "/favicon/we-quote-nevada-logo-square-160.png",
+			"type": "image/png",
+			"sizes": "160x160"
+		},
+		{
+			"src": "/favicon/we-quote-nevada-logo-square-96.png",
+			"type": "image/png",
+			"sizes": "96x96"
+		},
+		{
+			"src": "/favicon/we-quote-nevada-logo-square-64.png",
+			"type": "image/png",
+			"sizes": "64x64"
+		},
+		{
+			"src": "/favicon/we-quote-nevada-logo-square-32.png",
+			"type": "image/png",
+			"sizes": "32x32"
+		},
+		{
+			"src": "/favicon/we-quote-nevada-logo-square-16.png",
+			"type": "image/png",
+			"sizes": "16x16"
+		}
+	],
+	"start_url": ".",
+	"display": "standalone",
+	"theme_color": "#000000",
+	"background_color": "#ffffff"
+}
