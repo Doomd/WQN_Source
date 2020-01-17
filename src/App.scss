@@ -88,10 +88,6 @@ a:hover {
 	margin: 0;
 	color: #555555;
 	font-size: 3vh;
-	// background: $gradient;
-	// background-clip: text;
-	// -webkit-background-clip: text;
-	// -webkit-text-fill-color: transparent;
 }
 .site-title h1:hover {
 	background: $gradient;
@@ -109,7 +105,7 @@ a:hover {
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: row-reversed;
-	justify-content: start;
+	justify-content: flex-start;
 	align-items: auto;
 	align-content: center;
 	font-size: 2vh;

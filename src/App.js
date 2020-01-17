@@ -9,7 +9,7 @@ import Footer from "./footer";
 import Box from "./box";
 import { FaFingerprint, FaCommentDollar, FaCheckDouble } from 'react-icons/fa';
 
-import { BrowserRouter as Router, Route, HashRouter, Link } from "react-router-dom";
+import { Route, HashRouter } from "react-router-dom";
 import { StateMachineProvider, createStore } from "little-state-machine";
 import Step1 from "./form1";
 import Step2 from "./form2";
