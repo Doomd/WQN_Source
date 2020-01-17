@@ -1,5 +1,4 @@
 import React from 'react';
-//import logo from './logo.svg';
 import logo from './we-quote-nevada-logo-pink.svg';
 import 'bootstrap/scss/bootstrap.scss';
 import { Container, Row, Col } from 'reactstrap'
@@ -14,6 +13,10 @@ import { StateMachineProvider, createStore } from "little-state-machine";
 import Step1 from "./form1";
 import Step2 from "./form2";
 import Result from "./result.js";
+
+import ReactGA from 'react-ga';
+ReactGA.initialize('UA-154561538-2');
+ReactGA.pageview(window.location.pathname + window.location.search);
 
 
 createStore({
