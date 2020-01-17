@@ -81,7 +81,7 @@ const Step1 = props => {
         <div id="form-page-2" className="form-page-2">
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="form-header"><h2>Get A Personalized Quote Today!</h2></div>
-                <h3>Form Page 2/2</h3>
+                <h3 hidden>Form Page 2</h3>
 
                 <div className="form-group">
                     <div className="row">
