@@ -8,6 +8,7 @@
 
 # testing
 /coverage
+#BC Custom
 
 # production
 /build
