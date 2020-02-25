@@ -1,27 +1,27 @@
 {
   "files": {
     "main.css": "/static/css/main.c04e7e51.chunk.css",
-    "main.js": "/static/js/main.58986b52.chunk.js",
-    "main.js.map": "/static/js/main.58986b52.chunk.js.map",
+    "main.js": "/static/js/main.70eef349.chunk.js",
+    "main.js.map": "/static/js/main.70eef349.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.5f4ee095.js",
     "runtime-main.js.map": "/static/js/runtime-main.5f4ee095.js.map",
     "static/css/2.765f46be.chunk.css": "/static/css/2.765f46be.chunk.css",
-    "static/js/2.db5d46f9.chunk.js": "/static/js/2.db5d46f9.chunk.js",
-    "static/js/2.db5d46f9.chunk.js.map": "/static/js/2.db5d46f9.chunk.js.map",
+    "static/js/2.ef03f711.chunk.js": "/static/js/2.ef03f711.chunk.js",
+    "static/js/2.ef03f711.chunk.js.map": "/static/js/2.ef03f711.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.de61d4cb0f237bb11c152392d1f24f4f.js": "/precache-manifest.de61d4cb0f237bb11c152392d1f24f4f.js",
+    "precache-manifest.f1ed30d9ee5d357d4a9c0a61e7f6fac6.js": "/precache-manifest.f1ed30d9ee5d357d4a9c0a61e7f6fac6.js",
     "service-worker.js": "/service-worker.js",
     "static/css/2.765f46be.chunk.css.map": "/static/css/2.765f46be.chunk.css.map",
     "static/css/main.c04e7e51.chunk.css.map": "/static/css/main.c04e7e51.chunk.css.map",
-    "static/js/2.db5d46f9.chunk.js.LICENSE": "/static/js/2.db5d46f9.chunk.js.LICENSE",
+    "static/js/2.ef03f711.chunk.js.LICENSE": "/static/js/2.ef03f711.chunk.js.LICENSE",
     "static/media/App.scss": "/static/media/HKGrotesk-Bold.c38c0b47.woff2",
     "static/media/we-quote-nevada-logo-pink.svg": "/static/media/we-quote-nevada-logo-pink.58192ae9.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.5f4ee095.js",
     "static/css/2.765f46be.chunk.css",
-    "static/js/2.db5d46f9.chunk.js",
+    "static/js/2.ef03f711.chunk.js",
     "static/css/main.c04e7e51.chunk.css",
-    "static/js/main.58986b52.chunk.js"
+    "static/js/main.70eef349.chunk.js"
   ]
 }
