@@ -197,7 +197,7 @@ const Step1 = props => {
                                         ref={register({ required: true })}
                                         defaultChecked={state.data.interest === "3"}
                                     />
-                                    <label className="form-check-label" htmlFor="interest-2">I'm want personalized service.</label>
+                                    <label className="form-check-label" htmlFor="interest-2">I want personalized service.</label>
                                 </div>
                                 <div className="form-check form-check-inline interest">
                                     <input className="form-check-input" type="radio" name="interest" id="interest-3" value="4"
